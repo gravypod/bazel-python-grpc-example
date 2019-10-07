@@ -20,9 +20,9 @@ rules_proto_grpc_toolchains()
 ####################
 ## gRPC + Python3 ##
 ####################
-load("@rules_proto_grpc//python:repositories.bzl", "python_repos")
+load("@rules_proto_grpc//python:repositories.bzl", rules_proto_grpc_python_repos = "python_repos")
 
-python_repos()
+rules_proto_grpc_python_repos()
 
 load("@com_github_grpc_grpc//bazel:grpc_deps.bzl", "grpc_deps")
 
@@ -33,6 +33,12 @@ load("@com_apt_itude_rules_pip//rules:dependencies.bzl", "pip_rules_dependencies
 pip_rules_dependencies()
 
 load("@com_apt_itude_rules_pip//rules:repository.bzl", "pip_repository")
+
+pip_repository(
+    name = "rules_proto_grpc_py2_deps",
+    python_interpreter = "python2",
+    requirements = "@rules_proto_grpc//python:requirements.txt",
+)
 
 pip_repository(
     name = "rules_proto_grpc_py3_deps",

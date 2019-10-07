@@ -5,5 +5,5 @@ py_binary(
     srcs = ["server.py"],
     main = "server.py",
     python_version = "PY3",
-    deps = ["//specs:specs_py"],
+    deps = ["//specs:greeter_python_library"],
 )
