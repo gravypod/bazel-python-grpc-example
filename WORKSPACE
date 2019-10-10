@@ -45,3 +45,9 @@ pip_repository(
     python_interpreter = "python3",
     requirements = "@rules_proto_grpc//python:requirements.txt",
 )
+
+pip_repository(
+    name = "rpc_server_deps",
+    python_interpreter = "python3",
+    requirements = "//rpcserver:requirements.txt",
+)

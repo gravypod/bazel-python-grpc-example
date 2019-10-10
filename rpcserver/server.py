@@ -6,6 +6,8 @@ import grpc
 
 from specs import greeter_pb2, greeter_pb2_grpc
 
+import requests
+
 print(dir(greeter_pb2))
 print(dir(greeter_pb2_grpc))
 
